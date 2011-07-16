@@ -1,0 +1,14 @@
+ProtocolTypes:
+   - &voip
+     name: Voip
+     value: voip
+   - &chat
+     name: Chat
+     value: chat
+Protocols:
+   - name: SIP
+     type: *voip
+     enable: true
+     package: Protocols.plugins.sip
+     version: "0.1"
+

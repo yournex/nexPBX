@@ -1,0 +1,16 @@
+{% extends "dojango/base.html" %}
+<!-- after -->
+
+
+{% block dojango_header_extra %}
+<script type="text/javascript">
+    dojo.require("dijit.form.NumberTextBox");
+    dojo.require("dijit.form.DateTextBox");
+</script>
+{% endblock %}
+
+{% block dojango_content %}
+    {# PLACE YOUR FORMS HERE #}
+    {{ form.as_p }}
+{% endblock %}
+

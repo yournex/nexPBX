@@ -1,9 +1,8 @@
 from django.db import models
 
-from Services.base import Base
+from Protocols.base import Base
 
-
-class SIP(Base):
+class SIP(Base, models.Model):
     extension         = models.CharField(max_length=15)
     secret            = models.CharField(max_length=15)
     voice_mail_status = models.BooleanField()

@@ -1,6 +1,6 @@
 from django.db import models
 
-class Base(models.Model):
+class Base:
     CLIENT_TYPE_CHOICES = (
         (u'user', 'User'),
         (u'gateway', 'Gateway'),

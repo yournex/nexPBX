@@ -1,6 +1,6 @@
 from django.db import models
 
-class Services(models.Model):
+class Protocols(models.Model):
     PRO_TYPE_CHOICES = (
         (u'voip', 'Voip'),
         (u'chat', 'Chat'),
@@ -12,6 +12,3 @@ class Services(models.Model):
     installed = models.BooleanField()
     package   = models.CharField(max_length=60) 
 
-loaded_plugins= []
-for service in Services.objects.all():
-    loaded_plugins.append( __import__(service.package, fromlist=['Services.plugins']))

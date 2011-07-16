@@ -1,3 +1,7 @@
+import os
+#nexPBX CONFIGS
+NEXPBX_ETC="%s/etc/nexpbx/" % os.getcwd()
+
 # Django settings for nexPBX project.
 
 DEBUG = True
@@ -120,8 +124,13 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'Services',
+    'Protocols',
+    'dojango',
+    #'Protocols.plugins.sip',
 )
+
+import Protocols.plugins
+INSTALLED_APPS = INSTALLED_APPS + Protocols.plugins.getPluginsAsTuple(NEXPBX_ETC)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
