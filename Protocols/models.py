@@ -1,14 +1,15 @@
 from django.db import models
 
-class Protocols(models.Model):
-    PRO_TYPE_CHOICES = (
-        (u'voip', 'Voip'),
-        (u'chat', 'Chat'),
+
+from Accounts.models import Account
+
+class Protocol(models.Model):
+    STATUS_CHOICES = (
+        (u'0', 'Disable'),
+        (u'1', 'Enable'),
     )
 
-    pro_type  = models.CharField(max_length=1, choices= PRO_TYPE_CHOICES)
-    name      = models.CharField(max_length=30)
-    disabled  = models.BooleanField()
-    installed = models.BooleanField()
-    package   = models.CharField(max_length=60) 
+    account = models.ForeignKey(Account)
+    name    = models.CharField(max_length=30)
+    status  = models.CharField(max_length=1, choices=STATUS_CHOICES)
 

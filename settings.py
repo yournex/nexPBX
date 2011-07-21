@@ -126,6 +126,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'Protocols',
     'dojango',
+    'Accounts',
+    'nexPages',
     #'Protocols.plugins.sip',
 )
 
@@ -154,3 +156,6 @@ LOGGING = {
         },
     }
 }
+
+
+AUTH_PROFILE_MODULE = 'Accounts.account'

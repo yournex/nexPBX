@@ -28,7 +28,6 @@ def loadPlugins(config_dir=None):
     ret_plugin = {}
     try :
         __plugin_configs = getConfig(config_dir)
-        return None
         for proto in __plugin_configs :
             try :
                 fromlist = ["views", "models"]

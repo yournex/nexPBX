@@ -14,7 +14,12 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    url(r'^Protocols/', include('Protocols.urls')),
+    url(r'^protocol/', include('Protocols.urls')),
     url(r'^dojango/', include('dojango.urls')),
+    url(r'^', include('nexPages.urls')),
     
 )
+
+#urlpatterns += patterns('',
+#    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/path/to/media'}),
+#    )
