@@ -1,6 +1,6 @@
 import yaml
 
-__plugin_configs = None
+__pro_plugins = None
 
 
 def getConfig(config_dir=None):
@@ -17,14 +17,14 @@ def getConfig(config_dir=None):
 
 def getPlugins(config_dir=None):
     """Return plugins, load them if it's not loaded"""
-    global __plugin_configs
-    if __plugin_configs == None:
+    global __pro_plugins
+    if __pro_plugins == None:
         return loadPlugins(config_dir)
-    return __plugin_configs
+    return __pro_plugins
 
 def loadPlugins(config_dir=None):
     """load plugins"""
-    global __plugin_configs
+    global __pro_plugins
     ret_plugin = {}
     try :
         __plugin_configs = getConfig(config_dir)
@@ -45,6 +45,7 @@ def loadPlugins(config_dir=None):
                 proto['pyobject']  = None
 
             ret_plugin[proto['name']] = proto
+        __pro_plugins = ret_plugin
         return ret_plugin
     except :
         raise

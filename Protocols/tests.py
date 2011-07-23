@@ -9,8 +9,8 @@ from django.test import TestCase
 
 
 class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+    def test_plugins(self):
+        """Test Plugin system in Protocols"""
+        import Protocols.plugins as p
+        self.assertEqual(p.getPlugins()['SIP']['installed'], True )
+        self.assertEqual(p.getPlugins()['SIP']['installed'], True )

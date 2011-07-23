@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'dojango',
     'Accounts',
     'nexPages',
+    'django_nose',
     #'Protocols.plugins.sip',
 )
 
@@ -159,3 +160,4 @@ LOGGING = {
 
 
 AUTH_PROFILE_MODULE = 'Accounts.account'
+TEST_RUNNER='django_nose.NoseTestSuiteRunner'
